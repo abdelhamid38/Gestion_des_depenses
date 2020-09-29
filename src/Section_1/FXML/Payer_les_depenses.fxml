@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="964.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Section_1.Controllers.Payer_les_depenses">
+   <children>
+      <Label layoutX="376.0" prefHeight="40.0" prefWidth="212.0" text="Faire un Commende" textFill="#0746a6" AnchorPane.topAnchor="0.0">
+         <font>
+            <Font name="Tahoma Bold" size="18.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView fill="#0746a6" glyphName="CHEVRON_RIGHT" size="30" />
+         </graphic>
+      </Label>
+      <HBox prefHeight="600.0" prefWidth="965.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
+         <children>
+            <AnchorPane prefHeight="600.0" prefWidth="483.0">
+               <children>
+                  <VBox layoutX="131.0" layoutY="61.0" prefHeight="560.0" prefWidth="483.0" spacing="3.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label alignment="CENTER_RIGHT" prefHeight="39.0" prefWidth="285.0" text="Presentation du fourniseur :" textAlignment="CENTER" textFill="#0746a6">
+                           <font>
+                              <Font name="Tahoma Bold" size="16.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIconView fill="#0746a6" glyphName="CHEVRON_RIGHT" size="28" textAlignment="CENTER" wrappingWidth="48.0" />
+                           </graphic>
+                        </Label>
+                        <JFXTextField fx:id="nom_prenomDIC" focusColor="#053de4" prefHeight="30.0" prefWidth="350.0" promptText="Le nom et le prenom" style="-fx-background-radius: 25%;" unFocusColor="#0746a6">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="adress_DIC" focusColor="#053de4" prefHeight="30.0" prefWidth="350.0" promptText="Le adress" style="-fx-background-radius: 25%;" unFocusColor="#0746a6">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </JFXTextField>
+                        <HBox prefHeight="50.0" prefWidth="468.0" spacing="18.0">
+                           <children>
+                              <JFXTextField fx:id="numtlfDIC" focusColor="#053de4" prefHeight="30.0" prefWidth="225.0" promptText="Numero de telephone" style="-fx-background-radius: 25%;" unFocusColor="#0746a6">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXTextField fx:id="numfacsDIC" focusColor="#053de4" prefHeight="30.0" prefWidth="225.0" promptText="Numero de fax" style="-fx-background-radius: 25%;" unFocusColor="#0746a6">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </JFXTextField>
+                           </children>
+                        </HBox>
+                        <Label alignment="TOP_LEFT" prefHeight="39.0" prefWidth="285.0" text="Presentation du Societe :" textAlignment="CENTER" textFill="#0746a6">
+                           <font>
+                              <Font name="Tahoma Bold" size="16.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIconView fill="#0746a6" glyphName="CHEVRON_RIGHT" size="28" textAlignment="CENTER" wrappingWidth="49.0" />
+                           </graphic>
+                           <VBox.margin>
+                              <Insets top="4.0" />
+                           </VBox.margin>
+                        </Label>
+                        <JFXTextField fx:id="nom_prenomDCE" focusColor="#053de4" prefHeight="30.0" prefWidth="350.0" promptText="Le de Directeur" style="-fx-background-radius: 25%;" unFocusColor="#0746a6">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="nom_compan" focusColor="#053de4" prefHeight="30.0" prefWidth="350.0" promptText="Le nom de Societe" style="-fx-background-radius: 25%;" unFocusColor="#0746a6">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="Agir_pour" focusColor="#053de4" prefHeight="30.0" prefWidth="350.0" promptText="Agir pour" style="-fx-background-radius: 25%;" unFocusColor="#0746a6">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="adress_DEC" focusColor="#053de4" prefHeight="30.0" prefWidth="350.0" promptText="Le adress" style="-fx-background-radius: 25%;" unFocusColor="#0746a6">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </JFXTextField>
+                        <HBox prefHeight="43.0" prefWidth="458.0" spacing="18.0">
+                           <children>
+                              <JFXTextField fx:id="n_tlfDEC" focusColor="#053de4" prefHeight="30.0" prefWidth="225.0" promptText="Numero de telephone" style="-fx-background-radius: 25%;" unFocusColor="#0746a6">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXTextField fx:id="n_fackssDEC" focusColor="#053de4" prefHeight="30.0" prefWidth="225.0" promptText="Numero de fax" style="-fx-background-radius: 25%;" unFocusColor="#0746a6">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </JFXTextField>
+                           </children>
+                        </HBox>
+                        <JFXTextField fx:id="R_compte_banc" focusColor="#053de4" prefHeight="30.0" prefWidth="350.0" promptText="Releve des comptes bancaire" style="-fx-background-radius: 25%;" unFocusColor="#0746a6">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </JFXTextField>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <JFXTextArea fx:id="theme_commend" labelFloat="true" layoutY="19.0" prefHeight="85.0" prefWidth="458.0" promptText="L'object de demende en detail" text="&#10;" unFocusColor="#0746a6">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </JFXTextArea>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets right="5.0" />
+               </padding></AnchorPane>
+            <AnchorPane prefHeight="600.0" prefWidth="482.0">
+               <children>
+                  <VBox layoutX="3.0" layoutY="28.0" prefHeight="600.0" prefWidth="602.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane prefHeight="107.0" prefWidth="472.0">
+                           <children>
+                              <Label alignment="CENTER_RIGHT" layoutX="6.0" layoutY="69.0" prefHeight="31.0" prefWidth="98.0" text="Produit:" textAlignment="CENTER" textFill="#0746a6">
+                                 <font>
+                                    <Font name="Tahoma Bold" size="14.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIconView fill="#0746a6" glyphName="CHEVRON_RIGHT" size="20" textAlignment="CENTER" wrappingWidth="26.0" />
+                                 </graphic>
+                              </Label>
+                              <JFXDatePicker fx:id="date" layoutX="5.0" layoutY="14.0" prefHeight="45.0" prefWidth="458.0" promptText="Date">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </JFXDatePicker>
+                           </children>
+                        </AnchorPane>
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                           <children>
+                              <VBox prefHeight="100.0" prefWidth="294.0">
+                                 <children>
+                                    <JFXTextField fx:id="infos" focusColor="#053de4" prefHeight="31.0" prefWidth="213.0" promptText="les donnees" style="-fx-background-radius: 25%;" unFocusColor="#0746a6">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </JFXTextField>
+                                    <JFXTextField fx:id="quant" focusColor="#053de4" prefHeight="31.0" prefWidth="213.0" promptText="Quantite" style="-fx-background-radius: 25%;" unFocusColor="#0746a6">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </JFXTextField>
+                                    <JFXTextField fx:id="prix" focusColor="#053de4" prefHeight="31.0" prefWidth="225.0" promptText="Prix d'unite" style="-fx-background-radius: 25%;" unFocusColor="#0746a6">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </JFXTextField>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="100.0" prefWidth="309.0">
+                                 <children>
+                                    <JFXTextField fx:id="unity" focusColor="#053de4" prefHeight="31.0" prefWidth="225.0" promptText="Unite de mesure" style="-fx-background-radius: 25%;" unFocusColor="#0746a6">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </JFXTextField>
+                                    <JFXTextField fx:id="tva_c" alignment="TOP_LEFT" focusColor="#053de4" prefHeight="31.0" prefWidth="225.0" promptText="TVA" style="-fx-background-radius: 25%;" unFocusColor="#0746a6">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </JFXTextField>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <opaqueInsets>
+                              <Insets left="5.0" right="5.0" />
+                           </opaqueInsets>
+                        </HBox>
+                        <HBox alignment="TOP_CENTER" prefHeight="31.0" prefWidth="474.0" spacing="15.0">
+                           <children>
+                              <JFXButton fx:id="add" alignment="CENTER" prefHeight="31.0" prefWidth="120.0" style="-fx-background-color: #0746A6;" text="Ajouter" textAlignment="CENTER" textFill="#fffefe">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontAwesomeIconView fill="#01ff5a" glyphName="CHEVRON_RIGHT" size="20" textAlignment="RIGHT" wrappingWidth="20.0" />
+                                 </graphic>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </JFXButton>
+                              <JFXButton fx:id="update" alignment="CENTER" prefHeight="31.0" prefWidth="120.0" style="-fx-background-color: #15CA1B;" text="Modifier" textAlignment="CENTER" textFill="#fffefe">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                                 <graphic>
+                                    <FontAwesomeIconView fill="#0746a6" glyphName="COG" size="20" textAlignment="CENTER" wrappingWidth="27.0" />
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="remove" alignment="CENTER" prefHeight="31.0" prefWidth="120.0" style="-fx-background-color: #F41933;" text="suppremer" textAlignment="CENTER" textFill="#fffefe">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                                 <graphic>
+                                    <FontAwesomeIconView fill="#0746a6" glyphName="REMOVE" size="20" />
+                                 </graphic>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                        <TableView fx:id="table" layoutX="11.0" layoutY="310.0" prefHeight="191.0" prefWidth="474.0" AnchorPane.rightAnchor="492.0" AnchorPane.topAnchor="310.0">
+                           <columns>
+                              <TableColumn fx:id="id" prefWidth="42.0" text="id" />
+                              <TableColumn fx:id="Infost" prefWidth="73.0" text="les donnees" />
+                              <TableColumn fx:id="unityt" prefWidth="101.0" text="Unite de mesure" />
+                              <TableColumn fx:id="quantt" prefWidth="87.0" text="Quantite" />
+                              <TableColumn fx:id="prixt" prefWidth="87.0" text="Prix d'unite" />
+                              <TableColumn fx:id="mantantt" prefWidth="84.0" text="Le montant" />
+                           </columns>
+                        </TableView>
+                        <HBox alignment="CENTER_LEFT" prefHeight="34.0" prefWidth="472.0">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="RIGHT" prefHeight="34.0" prefWidth="157.0" style="-fx-border-color: #0746A6;" text="المبلغ" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" contentDisplay="RIGHT" prefHeight="39.0" prefWidth="157.0" style="-fx-border-color: #0746A6;" text="TVA المبلغ" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" contentDisplay="RIGHT" prefHeight="34.0" prefWidth="157.0" style="-fx-border-color: #0746A6;" text="كل الرسوم" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="472.0">
+                           <children>
+                              <Label fx:id="price_tva" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="31.0" prefWidth="157.0" style="-fx-border-color: #0746A6;" text="##" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="price_total" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="39.0" prefWidth="157.0" style="-fx-border-color: #0746A6;" text="##" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="price" alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="39.0" prefWidth="157.0" style="-fx-border-color: #0746A6;" text="##" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="TOP_CENTER" prefHeight="57.0" prefWidth="472.0" spacing="10.0">
+                           <children>
+                              <JFXButton onMouseClicked="#Next" prefHeight="44.0" prefWidth="108.0" style="-fx-background-color: #0746A6;" text="التالي" textFill="#f8f8f8">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                                 <effect>
+                                    <Lighting diffuseConstant="1.53" specularConstant="1.33" surfaceScale="7.78">
+                                       <bumpInput>
+                                          <Shadow />
+                                       </bumpInput>
+                                    </Lighting>
+                                 </effect>
+                              </JFXButton>
+                              <JFXButton contentDisplay="RIGHT" prefHeight="44.0" prefWidth="108.0" style="-fx-background-color: #0746A6;" text="إلغاء" textFill="#f8f8f8">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                                 <effect>
+                                    <Lighting diffuseConstant="1.53" specularConstant="1.33" surfaceScale="7.78">
+                                       <bumpInput>
+                                          <Shadow />
+                                       </bumpInput>
+                                    </Lighting>
+                                 </effect>
+                                 <graphic>
+                                    <FontAwesomeIconView fill="#d30e0e" glyphName="CARET_LEFT" size="30" textAlignment="RIGHT" wrappingWidth="19.14285659790039" />
+                                 </graphic>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets left="5.0" right="5.0" />
+                     </padding>
+      
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </AnchorPane>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

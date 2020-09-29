@@ -1,0 +1,13 @@
+.AnchorPane {
+-fx-background-image:url(images/Login_1.jpg);
+}
+.hover_border:hover{
+
+    -fx-background-color:#FD1F0D;
+    -fx-cursor: hand;
+}
+.hover_border1:hover{
+
+    -fx-background-color:#E2E4DD;
+    -fx-cursor: hand;
+}

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.net.URL?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="parent" prefHeight="670.0" prefWidth="1227.0" style="-fx-border-color: #0746A6;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Dashbord.DashbordController">
+    <stylesheets>
+        <URL value="@dashbord.css" />
+    </stylesheets>
+   <children>
+      <AnchorPane prefHeight="70.0" prefWidth="1227.0" style="-fx-background-color: #0746A6;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane layoutX="958.0" layoutY="-86.0" prefHeight="30.0" prefWidth="200.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <JFXButton fx:id="exit" contentDisplay="CENTER" layoutX="1190.0" prefHeight="30.0" prefWidth="52.0" ripplerFill="#e1d0d0" style="-fx-background-radius: 0;" styleClass="hover_border_exit" stylesheets="@exitstyle.css" textAlignment="CENTER" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <graphic>
+                        <FontAwesomeIconView fill="#4d4747" glyphName="REMOVE" size="25" />
+                     </graphic>
+                     <font>
+                        <Font size="1.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="FullScreen" contentDisplay="CENTER" layoutX="1123.0" prefHeight="30.0" prefWidth="52.0" ripplerFill="#e1d0d0" style="-fx-background-radius: 0;" styleClass="reduire" stylesheets="@exitstyle.css" textAlignment="CENTER" AnchorPane.rightAnchor="52.0" AnchorPane.topAnchor="0.0">
+                     <graphic>
+                        <FontAwesomeIconView fx:id="max" fill="#4d4747" glyphName="CLONE" size="20" />
+                     </graphic>
+                     <font>
+                        <Font size="1.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="reduire" contentDisplay="CENTER" layoutX="1071.0" prefHeight="30.0" prefWidth="52.0" ripplerFill="#e1d0d0" style="-fx-background-radius: 0;" styleClass="reduire" stylesheets="@exitstyle.css" textAlignment="CENTER" AnchorPane.rightAnchor="104.0" AnchorPane.topAnchor="0.0">
+                     <graphic>
+                        <FontAwesomeIconView fill="#4d4747" glyphName="MINUS" size="25" />
+                     </graphic>
+                     <font>
+                        <Font size="1.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+            <JFXButton alignment="CENTER_RIGHT" layoutX="-16.0" onAction="#princ" prefHeight="70.0" prefWidth="268.0" style="-fx-background-radius: 20px;" text="La page princibal " textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <font>
+                  <Font name="Tahoma Bold" size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="48.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../Documents/NetBeansProjects/my_project_for_free_time/src/Images/1.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <VBox fx:id="vbox" layoutX="10.0" layoutY="80.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="252.0" style="-fx-background-color: #0747A6; -fx-border-color: #0746A6;" stylesheets="@dashbord.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="70.0">
+         <children>
+            <Label alignment="CENTER" contentDisplay="TOP" opacity="0.8" prefHeight="136.0" prefWidth="250.0" style="-fx-background-color: #fff;" text="Gestion des depenses" textFill="#0746a6">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="#0746a6" glyphName="JOOMLA" size="70" />
+               </graphic>
+            </Label>
+            <JFXButton accessibleText="port_1" alignment="BASELINE_LEFT" focusTraversable="false" prefHeight="80.0" prefWidth="418.0" ripplerFill="#f2ff02" style="-fx-background-color: #0746A6;" styleClass="hover_border" text="Payer les depenses" textFill="#fff3f3" wrapText="true">
+               <font>
+                  <Font name="Tahoma Bold" size="18.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="#2fff00" glyphName="ADD" size="24" strokeType="OUTSIDE" text="I" textAlignment="CENTER" wrappingWidth="42.0">
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                  </FontAwesomeIconView>
+               </graphic>
+            </JFXButton>
+            <JFXButton accessibleText="port_2" alignment="BASELINE_LEFT" focusTraversable="false" prefHeight="80.0" prefWidth="250.0" ripplerFill="#f2ff02" style="-fx-background-color: #0746A6;" styleClass="hover_border" text="Outiles" textFill="WHITE">
+               <font>
+                  <Font name="Tahoma Bold" size="18.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="#2fff00" glyphName="ADD" size="24" strokeType="OUTSIDE" text="II" textAlignment="CENTER" wrappingWidth="50.0">
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                  </FontAwesomeIconView>
+               </graphic>
+            </JFXButton>
+            <JFXButton accessibleText="port_3" alignment="BASELINE_LEFT" focusTraversable="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="80.0" prefWidth="250.0" ripplerFill="#f2ff02" style="-fx-background-color: #0746A6;" styleClass="hover_border" text="Provision" textFill="#fff3f3">
+               <font>
+                  <Font name="Tahoma Bold" size="18.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="#2fff00" size="24" text="III" textAlignment="CENTER" wrappingWidth="50.0" />
+               </graphic>
+            </JFXButton>
+            <JFXButton accessibleText="port_4" alignment="BASELINE_LEFT" focusTraversable="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="80.0" prefWidth="250.0" ripplerFill="#f2ff02" style="-fx-background-color: #0746A6;" styleClass="hover_border" text="Accessoires" textFill="#fff3f3">
+               <font>
+                  <Font name="Tahoma Bold" size="18.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="#2fff00" size="24" text="IV" textAlignment="CENTER" wrappingWidth="50.0" />
+               </graphic>
+            </JFXButton>
+            <JFXButton accessibleText="port_5" alignment="BASELINE_LEFT" focusTraversable="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="80.0" prefWidth="250.0" ripplerFill="#f2ff02" style="-fx-background-color: #0746A6;" styleClass="hover_border" text="Nourriture" textFill="#fff3f3">
+               <font>
+                  <Font name="Tahoma Bold" size="18.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="#2fff00" size="24" text="V" textAlignment="CENTER" wrappingWidth="50.0" />
+               </graphic>
+            </JFXButton>
+            <JFXButton accessibleText="port_6" alignment="BASELINE_LEFT" focusTraversable="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="80.0" prefWidth="250.0" ripplerFill="#f2ff02" style="-fx-background-color: #0746A6;" styleClass="hover_border" text="Maitenance" textFill="#fff3f3">
+               <font>
+                  <Font name="Tahoma Bold" size="18.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="#2fff00" size="24" text="VI" textAlignment="CENTER" wrappingWidth="50.0" />
+               </graphic>
+            </JFXButton>
+         </children>
+      </VBox>
+      <AnchorPane fx:id="ports" prefHeight="600.0" prefWidth="965.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0" />
+   </children>
+</AnchorPane>
