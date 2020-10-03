@@ -30,7 +30,7 @@ public class Gestion_des_depenses extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            AnchorPane anchorPane=FXMLLoader.load(getClass().getResource("../Login/Login.fxml"));
+            AnchorPane anchorPane=FXMLLoader.load(getClass().getResource("../Dashbord/Dashbord.fxml"));
             Scene scene=new Scene(anchorPane);
             primaryStage.setScene(scene);
             primaryStage.initStyle(StageStyle.TRANSPARENT);

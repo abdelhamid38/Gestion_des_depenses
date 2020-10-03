@@ -20,12 +20,12 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import net.sf.jasperreports.engine.*;
+import com.mysql.jdbc.PreparedStatement;
 import org.apache.tools.ant.taskdefs.Get;
 import org.apache.velocity.runtime.directive.Parse;
 
 import javax.swing.JOptionPane;
 import java.net.URL;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.ResourceBundle;
@@ -230,7 +230,7 @@ public class Payer_les_depenses implements Initializable {
 
             connection = (Connection) DB.getConnection();
             Societe societe=new Societe(Excute_Query.GetLastSocieteID(),nom_prenomDCE.getText(),nom_compan.getText(),adress_DEC.getText(),Integer.parseInt(n_tlfDEC.getText()),Integer.parseInt(n_fackssDEC.getText()),R_compte_banc.getText());
-            String SQL2 = "INSERT INTO `societe`(`Derecteur`, `nom`, `Adress`, `N°TLF`, `N°FAX`, `Compte_bancaire`) VALUES (?,?,?,?,?,?)";
+            String SQL2 = "INSERT INTO `societe`(`Derecteur`, `nom`, `Adress_Sos`, `N°tlf_sos`, `N°fax_sos`, `Compte_bancaire`) VALUES (?,?,?,?,?,?)";
             com.mysql.jdbc.PreparedStatement ps2 = (com.mysql.jdbc.PreparedStatement) connection.prepareStatement(SQL2);
 
             ps2.setString(1,societe.getNom_derecteur());
@@ -256,23 +256,37 @@ public class Payer_les_depenses implements Initializable {
             }
         }
         try {
-            connection = (Connection) DB.getConnection();
-            Commend commend = new Commend(Excute_Query.GetLastCommendID()+1,Agir_pour.getText(),theme_commend.getText(), Convert_date.Convert(date.getValue()),Double.parseDouble(price.getText()),Double.parseDouble(price_total.getText()));
-            String SQL3 = "INSERT INTO `dommende`(`Agir_pour`, `Theme`, `date`, `Mantant`, `mantant_tatal`, `id_for`, `id_sos`) VALUES (?,?,?,?,?,?,?)";
-            com.mysql.jdbc.PreparedStatement ps3 = (com.mysql.jdbc.PreparedStatement) connection.prepareStatement(SQL3);
-
-            ps3.setString(1,commend.getAgir_pour());
-            ps3.setString(2,commend.getTheme());
-            ps3.setDate(3,Convert_date.CovertToSqlDate(commend.getDate()));
-            ps3.setDouble(4,commend.getMantant());
-            ps3.setDouble(5,commend.getMantant_total());
-            ps3.setInt(6,Excute_Query.GetLastForniseurID());
-            ps3.setInt(7,Excute_Query.GetLastSocieteID());
-
-            ps3.executeUpdate();
+            connection=(Connection) DB.getConnection();
+            String SQL="INSERT INTO `langagement`(`id_port`) VALUES (?)";
+            Langagement langagement=new Langagement(Excute_Query.GetLastLangagementID()+1,null,0,null,null,null,null,1);
+            PreparedStatement preparedStatement=(PreparedStatement) connection.prepareStatement(SQL);
+            preparedStatement.setInt(1,langagement.getId_port());
+            preparedStatement.executeUpdate();
         }catch (Exception ex){
 
-            System.out.println(ex.getMessage()+":dommend");
+            System.out.println(ex.getMessage()+":Langagement");
+
+        }finally {
+            try {
+                connection.close();
+            }catch (Exception e){
+
+            }
+        }
+        try {
+
+            connection=(Connection)DB.getConnection();
+            String SQL="INSERT INTO `depenses`(`theme`, `Mantant_theme`, `id_lang`) VALUES (?,?,?)";
+            Depenses depenses=new Depenses(1,theme_commend.getText(),Double.parseDouble(price_total.getText()),Excute_Query.GetLastLangagementID());
+            PreparedStatement preparedStatement=(PreparedStatement)connection.prepareStatement(SQL);
+            preparedStatement.setString(1,depenses.getTheme());
+            preparedStatement.setDouble(2,depenses.getMantant());
+            preparedStatement.setInt(3,depenses.getId_lang());
+            preparedStatement.executeUpdate();
+        }catch (Exception ex){
+
+            System.out.println(ex.getMessage()+":depenses");
+
         }finally {
             try {
                 connection.close();
@@ -283,7 +297,7 @@ public class Payer_les_depenses implements Initializable {
         try {
             connection = (Connection) DB.getConnection();
             Commend commend = new Commend(Excute_Query.GetLastCommendID()+1,Agir_pour.getText(),theme_commend.getText(), Convert_date.Convert(date.getValue()),Double.parseDouble(price.getText()),Double.parseDouble(price_total.getText()));
-            String SQL3 = "INSERT INTO `dommende`(`Agir_pour`, `Theme`, `date`, `Mantant`, `mantant_tatal`, `id_for`, `id_sos`) VALUES (?,?,?,?,?,?,?)";
+            String SQL3 = "INSERT INTO `dommende`(`Agir_pour`, `Theme`, `date`, `Mantant`, `mantant_tatal`, `id_for`, `id_sos`,`id_depenses`) VALUES (?,?,?,?,?,?,?,?)";
             com.mysql.jdbc.PreparedStatement ps3 = (com.mysql.jdbc.PreparedStatement) connection.prepareStatement(SQL3);
 
             ps3.setString(1,commend.getAgir_pour());
@@ -293,6 +307,7 @@ public class Payer_les_depenses implements Initializable {
             ps3.setDouble(5,commend.getMantant_total());
             ps3.setInt(6,Excute_Query.GetLastForniseurID());
             ps3.setInt(7,Excute_Query.GetLastSocieteID());
+            ps3.setInt(8,Excute_Query.GetLastDepensesID());
 
             ps3.executeUpdate();
         }catch (Exception ex){
