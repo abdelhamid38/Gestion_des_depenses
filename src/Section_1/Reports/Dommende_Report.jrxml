@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cd9cf839-7561-4429-bcad-14a308a200c5">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#EFF7FF"/>
+		</conditionalStyle>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#EFF7FF"/>
+		</conditionalStyle>
+	</style>
+	<subDataset name="Produits" uuid="534aeb94-4514-4605-b07b-c4a535cac79f">
+		<queryString language="SQL">
+			<![CDATA[SELECT * FROM
+produits 
+WHERE id_dommende=(SELECT id FROM dommende ORDER BY id desc limit 1)]]>
+		</queryString>
+		<field name="id" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="nom_produit" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="Unite" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="Quantite" class="java.lang.Double">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="Prix_unitaire" class="java.lang.Double">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="id_dommende" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+	</subDataset>
+	<queryString>
+		<![CDATA[SELECT * FROM dommende d JOIN forniseur f ON d.id_for=f.id JOIN societe s ON d.id_sos=s.id JOIN produits p ON p.id_dommende=d.id where 1 ORDER BY d.id desc limit 1]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Agir_pour" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Theme" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="date" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Mantant" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="mantant_tatal" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_for" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_sos" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nom_prenom" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Adress" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="N°Tlf" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="N°fax" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Derecteur" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nom" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Adress_Sos" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="N°tlf_sos" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="N°fax_sos" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Compte_bancaire" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nom_produit" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Unite" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Quantite" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Prix_unitaire" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_dommende" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="206" y="0" width="174" height="23" uuid="dd4d59e7-d1ad-4fde-b9a3-c2050e473809"/>
+				<textElement textAlignment="Center">
+					<font fontName="Tahoma" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dommende Report]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="68" y="23" width="459" height="24" uuid="aae42520-da7b-4da5-9054-9d869a3c4c5a"/>
+				<textElement textAlignment="Center">
+					<font fontName="Tahoma" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[République Algérienne Démocratique et Populaire]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="204" y="47" width="65" height="20" uuid="38480796-218e-4abb-a4ca-9c2a559fccf4"/>
+				<textElement textAlignment="Center">
+					<font fontName="Tahoma" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="177" y="47" width="27" height="20" uuid="dd96c8e4-6d72-416c-9203-e69de8cf5db7"/>
+				<textElement>
+					<font fontName="Tahoma" size="14" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Id :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="269" y="47" width="38" height="20" uuid="649de71e-05a9-4ff2-b4a0-3cd91f60448d"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Date:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="307" y="47" width="100" height="20" uuid="918aa590-c012-4a1f-be08-cbc02416b992"/>
+				<textElement textAlignment="Center">
+					<font fontName="Tahoma" size="14" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="305" splitType="Stretch">
+			<staticText>
+				<reportElement x="218" y="3" width="189" height="20" uuid="5e923bc4-3b82-49a5-aef4-24a8ba85f69c"/>
+				<textElement>
+					<font fontName="Tahoma" size="14" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Presentation de forniseur:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="340" y="33" width="167" height="20" uuid="7baf2b72-69cd-4318-8654-c3aa4d8eef3b"/>
+				<textElement>
+					<font fontName="Tahoma" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nom_prenom}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="218" y="33" width="122" height="20" uuid="9f7a8586-1ed5-4052-be21-022a0cf634f9"/>
+				<textElement>
+					<font fontName="Tahoma" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nom et Prenom :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="287" y="53" width="220" height="20" uuid="a47848a7-b355-46e4-bff3-584211678508"/>
+				<textElement>
+					<font fontName="Tahoma" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Adress}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="218" y="53" width="69" height="20" uuid="eb706d56-b08f-43e2-b547-b5669488ee95"/>
+				<textElement>
+					<font fontName="Tahoma" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Adress :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="218" y="73" width="162" height="20" uuid="ff3b2dc3-5d0f-4c0f-a722-482711f4f2c8"/>
+				<textElement>
+					<font fontName="Tahoma" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nemero de telephone :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="218" y="93" width="162" height="20" uuid="dd997e8a-29ad-44eb-962c-2f46270f9c42"/>
+				<textElement>
+					<font fontName="Tahoma" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nemero de fax :]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="10" y="3" width="194" height="302" uuid="0d2bb428-5da9-4a34-8396-834e3e5f563f"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="218" y="128" width="189" height="20" uuid="746103be-7496-42cb-9f92-df90e8f6e233"/>
+				<textElement>
+					<font fontName="Tahoma" size="14" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Presentation de societe:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="318" y="164" width="189" height="20" uuid="a4c22bdf-30fe-4145-b7d1-59b33b9a8ca3"/>
+				<textElement>
+					<font fontName="Tahoma" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Derecteur}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="341" y="184" width="166" height="20" uuid="102bfa6f-8fcf-4759-bf72-d3bd96d1777f"/>
+				<textElement>
+					<font fontName="Tahoma" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nom}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="351" y="204" width="156" height="20" uuid="1fcc4654-5efc-4bda-933f-8aad1566fefd"/>
+				<textElement>
+					<font fontName="Tahoma" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Adress_Sos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="73" width="127" height="20" uuid="10242642-882f-40eb-8ffa-893f215bcfd9"/>
+				<textElement>
+					<font fontName="Tahoma" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{N°Tlf}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="93" width="127" height="20" uuid="db103f03-baaf-4e42-827f-8cfe417a8174"/>
+				<textElement>
+					<font fontName="Tahoma" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{N°fax}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="224" width="127" height="20" uuid="5afc7a97-450f-4ee0-9812-d1932d95784b"/>
+				<textElement>
+					<font fontName="Tahoma" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{N°tlf_sos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="329" y="244" width="178" height="20" uuid="50b6312c-e6fd-4c18-ba45-91ec6997bea2"/>
+				<textElement>
+					<font fontName="Tahoma" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{N°fax_sos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="351" y="264" width="156" height="20" uuid="14e0cfa6-c42b-4ca4-bcd7-fa5e19a5db74"/>
+				<textElement>
+					<font fontName="Tahoma" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Compte_bancaire}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="218" y="164" width="100" height="20" uuid="b9d0cc68-d9d5-4b9d-a356-40cd8a07b178"/>
+				<textElement>
+					<font fontName="Tahoma" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Derecteur :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="218" y="184" width="122" height="20" uuid="4f593292-0076-4fe9-bdd0-633aeb44ea22"/>
+				<textElement>
+					<font fontName="Tahoma" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nom de societe :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="218" y="224" width="162" height="20" uuid="3076ecd1-4bd7-46bd-a151-1bac4bb18586"/>
+				<textElement>
+					<font fontName="Tahoma" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nemero de telephone :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="218" y="244" width="111" height="20" uuid="c5bc784a-cdf2-4545-80db-15452d72b05b"/>
+				<textElement>
+					<font fontName="Tahoma" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nmero de fax :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="218" y="264" width="133" height="20" uuid="d92c9bdb-a7c4-40a7-84e7-eebc307ecf4e"/>
+				<textElement>
+					<font fontName="Tahoma" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Compte bancaire :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="218" y="204" width="133" height="20" uuid="6cd4d07a-2562-44e0-b0c3-32d773a94dfa"/>
+				<textElement>
+					<font fontName="Tahoma" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Adress de societe :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="13" width="172" height="40" uuid="61224cfe-c3b9-488e-97cf-c973ece83cb9"/>
+				<textElement textAlignment="Center">
+					<font fontName="Tahoma" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Departement du controle financier]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="34" y="80" width="48" height="20" uuid="3f39e5e5-d526-4876-8bfc-b5379dcee442"/>
+				<textElement>
+					<font fontName="Tahoma" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Avec :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="92" y="92" width="100" height="1" uuid="6954b81b-02c0-411a-a13b-87f71080793f"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="34" y="113" width="48" height="20" uuid="28d11cfa-a76a-432b-a807-106e7cbe3190"/>
+				<textElement>
+					<font fontName="Tahoma" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[dans :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="92" y="127" width="100" height="1" uuid="5816c31e-740b-4623-93b8-6a7006103a97"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="20" y="164" width="172" height="80" uuid="6bb40fae-3dc6-432f-9ee9-4aa7d3ea5c68"/>
+				<textElement textAlignment="Center">
+					<font fontName="Tahoma" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cette position est detine a l'Autorite de surviellance finnanciere pour y apposer le sceau du departememt]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="318" y="284" width="189" height="20" uuid="9e8aabcd-e375-4b0f-b4e5-f7785a19785f"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Agir_pour}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="218" y="284" width="100" height="20" uuid="c6f8628c-ac21-43f0-bffc-4d05d26589f9"/>
+				<textElement>
+					<font fontName="Tahoma" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Agir pour :]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="176" splitType="Stretch">
+			<staticText>
+				<reportElement x="218" y="11" width="200" height="20" uuid="646aca1d-4eff-4050-824b-ee735068554b"/>
+				<textElement>
+					<font fontName="Tahoma" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Proprietes de la demmande:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="116" y="31" width="88" height="20" uuid="f6268574-e557-4de0-9b0e-b1185ed1a02f"/>
+				<textElement>
+					<font fontName="Tahoma" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Le theme :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="206" y="31" width="301" height="20" uuid="fab00773-9233-47d5-af6f-a7275e0001bf"/>
+				<textElement>
+					<font fontName="Tahoma" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Theme}]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement key="table 1" style="table 1" x="20" y="62" width="518" height="80" uuid="56001b97-ccad-421e-a989-d122026a0641"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Produits" uuid="e6989b7d-cf8d-4df8-bb3d-7456f4b1debb">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="75" uuid="e6bd137f-6dc7-4c8f-bc34-ebac26933ec2">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="75" height="30" uuid="771b5ca6-b2c0-4c37-b668-82fde85bfab9"/>
+								<textElement textAlignment="Center">
+									<font fontName="Tahoma" size="16" isBold="true" isUnderline="true"/>
+								</textElement>
+								<text><![CDATA[id]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="75" height="20" uuid="69e6ddfb-480f-4360-b7a6-397c198ce02f"/>
+								<textElement textAlignment="Center">
+									<font fontName="Tahoma" size="14" isBold="true" isUnderline="false"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="109" uuid="03408188-d0b7-4f3e-8cd3-4da0a5633bab">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="109" height="30" uuid="57ee0a9c-963c-449d-a3e8-db3a4269319f"/>
+								<textElement textAlignment="Center">
+									<font fontName="Tahoma" size="16" isBold="true" isUnderline="true"/>
+								</textElement>
+								<text><![CDATA[nom_produit]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="109" height="20" uuid="d6a1f85a-6477-4561-b5dd-767959c73324"/>
+								<textElement textAlignment="Center">
+									<font fontName="Tahoma" size="14" isBold="true" isUnderline="false"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{nom_produit}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="1489e295-6cc4-4ed3-9982-ae12a936fd4c">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="268d769e-2984-41aa-8a9d-2a1c54616ecb"/>
+								<textElement textAlignment="Center">
+									<font fontName="Tahoma" size="16" isBold="true" isUnderline="true"/>
+								</textElement>
+								<text><![CDATA[Unite]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="533e2d4d-7c64-4745-be6b-6fdd3005eedd"/>
+								<textElement textAlignment="Center">
+									<font fontName="Tahoma" size="14" isBold="true" isUnderline="false"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{Unite}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="96f75380-949c-43cd-b7d6-bc4a53dee603">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="aeb5e254-c2ac-4e6f-8cf7-1ed60215ea46"/>
+								<textElement textAlignment="Center">
+									<font fontName="Tahoma" size="16" isBold="true" isUnderline="true"/>
+								</textElement>
+								<text><![CDATA[Quantite]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="3201d2aa-6a9d-499c-80ed-22b446dd0094"/>
+								<textElement textAlignment="Center">
+									<font fontName="Tahoma" size="14" isBold="true" isUnderline="false"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{Quantite}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="131" uuid="fdf7e29d-a9ed-40d2-adf8-88ddfee7361e">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="131" height="30" uuid="ff2ee1ec-c8ce-4df3-ac75-c4682d21cba3"/>
+								<textElement textAlignment="Center">
+									<font fontName="Tahoma" size="16" isBold="true" isUnderline="true"/>
+								</textElement>
+								<text><![CDATA[Prix_unitaire]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="131" height="20" uuid="da5c383c-f097-4533-a4b2-01408ad3dda3"/>
+								<textElement textAlignment="Center">
+									<font fontName="Tahoma" size="14" isBold="true" isUnderline="false"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{Prix_unitaire}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<textField>
+				<reportElement x="116" y="142" width="128" height="20" uuid="3deaa3c4-07c8-409f-9353-223f95524226"/>
+				<textElement>
+					<font fontName="Tahoma" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Mantant}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="142" width="158" height="20" uuid="06fc4505-e261-4949-87c0-0de7717e913e"/>
+				<textElement>
+					<font fontName="Tahoma" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mantant_tatal}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="249" y="142" width="131" height="20" uuid="e8bbd4e9-13a9-4799-81d3-7e659d845f3f"/>
+				<textElement>
+					<font fontName="Tahoma" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Le mantant total :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="142" width="96" height="20" uuid="99efd240-47a4-4a9b-9c69-14790f61d6fd"/>
+				<textElement>
+					<font fontName="Tahoma" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Le montant :]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

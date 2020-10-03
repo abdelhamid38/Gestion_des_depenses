@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXTextArea?>
 <?import com.jfoenix.controls.JFXTextField?>
@@ -19,9 +20,9 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="964.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Section_1.Controllers.Payer_les_depenses">
    <children>
-      <Label layoutX="376.0" prefHeight="40.0" prefWidth="212.0" text="Faire un Commende" textFill="#0746a6" AnchorPane.topAnchor="0.0">
+      <Label layoutX="165.0" prefHeight="40.0" prefWidth="285.0" text="Faire un Commende" textFill="#0746a6" AnchorPane.topAnchor="0.0">
          <font>
-            <Font name="Tahoma Bold" size="18.0" />
+            <Font name="Tahoma Bold" size="25.0" />
          </font>
          <graphic>
             <FontAwesomeIconView fill="#0746a6" glyphName="CHEVRON_RIGHT" size="30" />
@@ -243,17 +244,17 @@
                         </TableView>
                         <HBox alignment="CENTER_LEFT" prefHeight="34.0" prefWidth="472.0">
                            <children>
-                              <Label alignment="CENTER" contentDisplay="RIGHT" prefHeight="34.0" prefWidth="157.0" style="-fx-border-color: #0746A6;" text="المبلغ" textAlignment="CENTER">
+                              <Label alignment="CENTER" contentDisplay="RIGHT" prefHeight="34.0" prefWidth="157.0" style="-fx-border-color: #0746A6;" text="Mantant Total" textAlignment="CENTER">
                                  <font>
                                     <Font name="System Bold" size="16.0" />
                                  </font>
                               </Label>
-                              <Label alignment="CENTER" contentDisplay="RIGHT" prefHeight="39.0" prefWidth="157.0" style="-fx-border-color: #0746A6;" text="TVA المبلغ" textAlignment="CENTER">
+                              <Label alignment="CENTER" contentDisplay="RIGHT" prefHeight="39.0" prefWidth="157.0" style="-fx-border-color: #0746A6;" text="TVA_Mantant" textAlignment="CENTER">
                                  <font>
                                     <Font name="System Bold" size="16.0" />
                                  </font>
                               </Label>
-                              <Label alignment="CENTER" contentDisplay="RIGHT" prefHeight="34.0" prefWidth="157.0" style="-fx-border-color: #0746A6;" text="كل الرسوم" textAlignment="CENTER">
+                              <Label alignment="CENTER" contentDisplay="RIGHT" prefHeight="34.0" prefWidth="157.0" style="-fx-border-color: #0746A6;" text="Mantant" textAlignment="CENTER">
                                  <font>
                                     <Font name="System Bold" size="16.0" />
                                  </font>
@@ -281,19 +282,7 @@
                         </HBox>
                         <HBox alignment="TOP_CENTER" prefHeight="57.0" prefWidth="472.0" spacing="10.0">
                            <children>
-                              <JFXButton onMouseClicked="#Next" prefHeight="44.0" prefWidth="108.0" style="-fx-background-color: #0746A6;" text="التالي" textFill="#f8f8f8">
-                                 <font>
-                                    <Font name="System Bold" size="18.0" />
-                                 </font>
-                                 <effect>
-                                    <Lighting diffuseConstant="1.53" specularConstant="1.33" surfaceScale="7.78">
-                                       <bumpInput>
-                                          <Shadow />
-                                       </bumpInput>
-                                    </Lighting>
-                                 </effect>
-                              </JFXButton>
-                              <JFXButton contentDisplay="RIGHT" prefHeight="44.0" prefWidth="108.0" style="-fx-background-color: #0746A6;" text="إلغاء" textFill="#f8f8f8">
+                              <JFXButton alignment="CENTER" prefHeight="44.0" prefWidth="108.0" style="-fx-background-color: #0746A6;" text="Cencel" textFill="#f8f8f8">
                                  <font>
                                     <Font name="System Bold" size="18.0" />
                                  </font>
@@ -305,7 +294,37 @@
                                     </Lighting>
                                  </effect>
                                  <graphic>
-                                    <FontAwesomeIconView fill="#d30e0e" glyphName="CARET_LEFT" size="30" textAlignment="RIGHT" wrappingWidth="19.14285659790039" />
+                                    <FontAwesomeIconView fill="#d30e0e" glyphName="CARET_RIGHT" size="30" wrappingWidth="21.14285659790039" />
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton alignment="CENTER" layoutX="131.0" layoutY="10.0" prefHeight="44.0" prefWidth="108.0" style="-fx-background-color: #0746A6;" text="Save" textFill="#f8f8f8">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                                 <effect>
+                                    <Lighting diffuseConstant="1.53" specularConstant="1.33" surfaceScale="7.78">
+                                       <bumpInput>
+                                          <Shadow />
+                                       </bumpInput>
+                                    </Lighting>
+                                 </effect>
+                                 <graphic>
+                                    <FontAwesomeIconView fill="#21d10f" glyphName="SAVE" size="30" wrappingWidth="38.14285659790039" />
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton onMouseClicked="#Next" prefHeight="44.0" prefWidth="108.0" style="-fx-background-color: #0746A6;" text="Next" textFill="#f8f8f8">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                                 <effect>
+                                    <Lighting diffuseConstant="1.53" specularConstant="1.33" surfaceScale="7.78">
+                                       <bumpInput>
+                                          <Shadow />
+                                       </bumpInput>
+                                    </Lighting>
+                                 </effect>
+                                 <graphic>
+                                    <FontAwesomeIconView fill="#00bbff" glyphName="MAIL_FORWARD" size="25" wrappingWidth="34.0" />
                                  </graphic>
                               </JFXButton>
                            </children>
@@ -323,5 +342,6 @@
             </AnchorPane>
          </children>
       </HBox>
+      <JFXComboBox layoutX="492.0" layoutY="1.0" prefHeight="39.0" prefWidth="458.0" promptText="Choisir un ports" unFocusColor="#0746a6" />
    </children>
 </AnchorPane>
