@@ -1,4 +1,4 @@
-package Section_1.Controllers;
+package Payer_depenses.Controllers;
 
 import DB.DB;
 import JavaFXViewer.Classes.JRViewerFx;
@@ -21,8 +21,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import net.sf.jasperreports.engine.*;
 import com.mysql.jdbc.PreparedStatement;
-import org.apache.tools.ant.taskdefs.Get;
-import org.apache.velocity.runtime.directive.Parse;
 
 import javax.swing.JOptionPane;
 import java.net.URL;
@@ -355,7 +353,7 @@ public class Payer_les_depenses implements Initializable {
         try {
             com.mysql.jdbc.Connection con = (com.mysql.jdbc.Connection) DB.getConnection();
             com.mysql.jdbc.PreparedStatement ps;
-            jasperPrint = JasperFillManager.fillReport("src/Section_1/Reports/Dommende_Report.jasper", new HashMap<>(), con);
+            jasperPrint = JasperFillManager.fillReport("src/Payer_depenses/Reports/Dommende_Report.jasper", new HashMap<>(), con);
             Stage stage = new Stage();
             new JRViewerFx(jasperPrint, JRViewerFxMode.REPORT_VIEW, stage);
         } catch (JRException e) {

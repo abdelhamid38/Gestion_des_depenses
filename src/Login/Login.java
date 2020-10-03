@@ -71,7 +71,7 @@ public class Login implements Initializable {
 
             try{
                 con = (Connection) DB.getConnection();
-                String sql1 = "SELECT * FROM `users` WHERE username='"+username.getText()+"' and password='"+password.getText()+"'";
+                String sql1 = "SELECT * FROM `users` WHERE username='"+username.getText()+"' and password='"+password.getText()+"' and role='user'";
                 ps1 =(PreparedStatement) con.prepareStatement(sql1);
                 rs1 = (ResultSetImpl) ps1.executeQuery();
                 try {

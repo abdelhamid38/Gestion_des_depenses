@@ -22,7 +22,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
@@ -76,7 +75,7 @@ public class DashbordController implements Initializable {
                         try {
                             ports.toFront();
                             ports.getChildren().clear();
-                            AnchorPane door = FXMLLoader.load(getClass().getResource("../section_1/FXML/Payer_les_depenses.fxml"));
+                            AnchorPane door = FXMLLoader.load(getClass().getResource("../Payer_depenses/FXML/Payer_les_depenses.fxml"));
                             ports.getChildren().add(door);
                             break;
                         } catch (IOException ex) {
@@ -87,7 +86,7 @@ public class DashbordController implements Initializable {
                         try {
                             ports.toFront();
                             ports.getChildren().clear();
-                            AnchorPane door = FXMLLoader.load(getClass().getResource("../section_2/FXML/Outiles.fxml"));
+                            AnchorPane door = FXMLLoader.load(getClass().getResource("../User_Dashboard/FXML/Outiles.fxml"));
 
                             ports.getChildren().add(door);
 
