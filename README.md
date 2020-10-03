@@ -8,12 +8,12 @@ CMS (Content Management System) for depenses management
 ### :camera: Use case diagram
 Console (app)          |
 :---------------------:|
-![Console - screenshots](Screenshots/Use_case_diagram.PNG) |
+![Console - screenshot](Screenshot/Use_case_diagram.PNG) |
 ### :camera: Class diagram
 Console (app)          |
 :---------------------:|
-![Console - screenshots](Screenshots/Class_diagram.PNG) |
+![Console - screenshot](Screenshot/Class_diagram.PNG) |
 ### :camera: Database
 Console (app)          |
 :---------------------:|
-![Console - screenshots](Screenshots/Capture.PNG) |
+![Console - screenshot](Screenshot/Capture.PNG) |
