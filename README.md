@@ -5,6 +5,10 @@ CMS (Content Management System) for depenses management system
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
 ### :white_check_mark: Our mechanism:
+
+[![IntelliJ IDEA ](Screenshot/intellij.jpg)](LICENSE) 
+[![IntelliJ IDEA ](Screenshot/Mysql.jpg)](LICENSE)
+
 ### :camera: Use case diagram
 Console (app)          |
 :---------------------:|
@@ -22,3 +26,11 @@ Console (app)          |
 Console (app)          |
 :---------------------:|
 ![Console - screenshot](Screenshot/Login.PNG) |
+### :camera: Admin dashbord
+Console (app)          |
+:---------------------:|
+![Console - screenshot](Screenshot/Admin_Dashbord.PNG) |
+### :camera: Print && Save Dommende file
+Console (app)          |
+:---------------------:|
+![Console - screenshot](Screenshot/Print_report.PNG) |
