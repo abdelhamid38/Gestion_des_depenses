@@ -1,5 +1,5 @@
 # Gestion_des_depenses
-CMS (Content Management System) for depenses management
+CMS (Content Management System) for depenses management system
 # Rapport of Gestion_des_depenses work :unlock: :snake:
 [![Lincence](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
